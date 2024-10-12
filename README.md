@@ -3,10 +3,12 @@
 Make sure you have installed Node.js and npm.
 
 ## Install Dependencies
+
 ```
 npm install
 npm run dev
 ```
+
 ## Create Environment Variables File
 
 Create a .env file in the root directory of your project.
@@ -25,7 +27,7 @@ I have used zod and dotenv to menage and validate env variables, You can modify 
 ./src/env.ts
 ```
 
-## Finally open server
+## Finally open documented api
 
 ```
 open http://localhost:3000

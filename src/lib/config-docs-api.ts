@@ -1,5 +1,6 @@
 import type { AppOpenApi } from "./types";
 import packageJson from "../../package.json";
+import { apiReference } from "@scalar/hono-api-reference"
 
 export default function configDocsApi(app: AppOpenApi) {
   app.doc(
@@ -11,5 +12,17 @@ export default function configDocsApi(app: AppOpenApi) {
         title: "Development tracker API",
       },
     },
-  );
+  ),
+  app.get(
+    '/reference',
+    apiReference({
+      defaultHttpClient: {
+        targetKey: 'javascript',
+        clientKey: 'axios',
+      },
+      spec: {
+        url: '/docs',
+      },
+    }),
+  )
 }
